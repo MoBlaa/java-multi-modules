@@ -6,7 +6,6 @@
         <groupId>org.myshelf.java19modules</groupId>
     	<artifactId>parent</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>domain</artifactId>
 

@@ -11,11 +11,12 @@
     <groupId>org.myshelf.java19modules</groupId>
     <artifactId>application</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    
+
     <properties>
     	<java.version>19</java.version>
-    	
-    	<dep.domain.version>0.0.1-SNAPSHOT</dep.domain.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <dep.domain.version>0.0.1-SNAPSHOT</dep.domain.version>
     </properties>
 
     <dependencies>

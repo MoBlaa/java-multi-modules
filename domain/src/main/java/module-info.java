@@ -1,7 +1,7 @@
 module java19modules.domain {
     requires jakarta.annotation;
-    requires lombok;
+    requires static lombok;
 
-    // Is only allowed to expose things and have minimal dependencies
     exports org.myshelf.java19modules.domain;
+    opens org.myshelf.java19modules.domain;
 }

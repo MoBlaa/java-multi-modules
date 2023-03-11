@@ -13,7 +13,7 @@ public class UserGateway implements UserRegisterDsGateway {
 
     @Override
     public boolean existsByName(String name) {
-        return repository.existsById(name);
+        return repository.existsByName(name);
     }
 
     @Override

@@ -10,9 +10,10 @@ module java19modules.application {
     requires spring.context;
     requires spring.beans;
     requires jakarta.persistence;
-    requires lombok;
+    requires static lombok;
+    requires org.hibernate.orm.core;
 
     // requires deep reflection
-    opens org.myshelf.java19modules to spring.core;
-    exports org.myshelf.java19modules to spring.beans,spring.context;
+    opens org.myshelf.java19modules;
+    exports org.myshelf.java19modules;
 }

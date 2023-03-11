@@ -17,7 +17,7 @@ public class Controller {
         return new Greeting(name).toString();
     }
 
-    @PostMapping("/user")
+    @PostMapping(value = "/user")
     public UserResponseDto create(@RequestBody UserRequestDto requestModel) {
         return userInput.create(requestModel);
     }

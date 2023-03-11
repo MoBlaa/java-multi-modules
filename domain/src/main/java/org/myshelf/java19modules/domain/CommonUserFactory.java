@@ -6,6 +6,6 @@ public class CommonUserFactory implements UserFactory {
     @Override
     @Nullable
     public User create(String name, String password) {
-        return null;
+        return new CommonUser(name, password);
     }
 }

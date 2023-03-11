@@ -1,4 +1,4 @@
-package org.myshelf.java19modules;
+package org.myshelf.java19modules.domain;
 
 public record Greeting(String name) {
 

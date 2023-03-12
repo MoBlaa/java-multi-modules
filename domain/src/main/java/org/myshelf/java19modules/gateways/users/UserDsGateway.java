@@ -1,6 +1,6 @@
-package org.myshelf.java19modules.domain;
+package org.myshelf.java19modules.gateways.users;
 
-public interface UserRegisterDsGateway {
+public interface UserDsGateway {
     boolean existsByName(String name);
 
     UserDsResponseDto save(UserDsRequestDto requestModel);

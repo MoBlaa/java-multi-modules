@@ -1,4 +1,4 @@
-package org.myshelf.java19modules.domain;
+package org.myshelf.java19modules.gateways.users;
 
 import java.time.LocalDateTime;
 

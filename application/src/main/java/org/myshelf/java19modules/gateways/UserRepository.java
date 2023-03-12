@@ -1,4 +1,4 @@
-package org.myshelf.java19modules;
+package org.myshelf.java19modules.gateways;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

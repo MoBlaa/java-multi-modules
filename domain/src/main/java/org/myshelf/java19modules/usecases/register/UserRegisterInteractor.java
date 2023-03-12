@@ -1,20 +1,26 @@
-package org.myshelf.java19modules.domain;
+package org.myshelf.java19modules.usecases.register;
 
 import lombok.AllArgsConstructor;
+import org.myshelf.java19modules.domain.User;
+import org.myshelf.java19modules.domain.UserFactory;
+import org.myshelf.java19modules.gateways.users.UserDsRequestDto;
+import org.myshelf.java19modules.gateways.users.UserDsResponseDto;
+import org.myshelf.java19modules.gateways.users.UserDsGateway;
+import org.myshelf.java19modules.presenters.users.UserPresenter;
 
 import java.time.Clock;
 import java.time.LocalDateTime;
 
 @AllArgsConstructor
-public class UserRegisterInteractor implements UserInputBoundary {
-    private final UserRegisterDsGateway userDsGateway;
+public class UserRegisterInteractor implements UserRegisterInputBoundary {
+    private final UserDsGateway userDsGateway;
     private final UserPresenter userPresenter;
     private final UserFactory userFactory;
     private final Clock clock;
 
 
     @Override
-    public UserResponseDto create(UserRequestDto requestModel) {
+    public UserRegisterResponseDto register(UserRegisterRequestDto requestModel) {
         if (userDsGateway.existsByName(requestModel.name())) {
             return userPresenter.prepareFailView("User with name %s already exists".formatted(requestModel.name()));
         }
@@ -28,7 +34,7 @@ public class UserRegisterInteractor implements UserInputBoundary {
 
         UserDsResponseDto createdUser = userDsGateway.save(userDsModel);
 
-        UserResponseDto accountResponseModel = new UserResponseDto(createdUser.id(), user.getName(), now.toString());
+        UserRegisterResponseDto accountResponseModel = new UserRegisterResponseDto(createdUser.id(), user.getName(), now.toString());
         return userPresenter.prepareSuccessView(accountResponseModel);
     }
 }

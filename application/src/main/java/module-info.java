@@ -16,4 +16,10 @@ module java19modules.application {
     // requires deep reflection
     opens org.myshelf.java19modules;
     exports org.myshelf.java19modules;
+    exports org.myshelf.java19modules.gateways;
+    opens org.myshelf.java19modules.gateways;
+    exports org.myshelf.java19modules.controllers;
+    opens org.myshelf.java19modules.controllers;
+    exports org.myshelf.java19modules.presenters;
+    opens org.myshelf.java19modules.presenters;
 }

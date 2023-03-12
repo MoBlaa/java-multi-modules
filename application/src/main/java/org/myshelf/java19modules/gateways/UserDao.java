@@ -1,14 +1,14 @@
-package org.myshelf.java19modules;
+package org.myshelf.java19modules.gateways;
 
 import lombok.AllArgsConstructor;
-import org.myshelf.java19modules.domain.UserDsRequestDto;
-import org.myshelf.java19modules.domain.UserDsResponseDto;
-import org.myshelf.java19modules.domain.UserRegisterDsGateway;
+import org.myshelf.java19modules.gateways.users.UserDsGateway;
+import org.myshelf.java19modules.gateways.users.UserDsRequestDto;
+import org.myshelf.java19modules.gateways.users.UserDsResponseDto;
 import org.springframework.stereotype.Component;
 
 @Component
 @AllArgsConstructor
-public class UserGateway implements UserRegisterDsGateway {
+public class UserDao implements UserDsGateway {
     final UserRepository repository;
 
     @Override

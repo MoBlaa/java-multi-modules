@@ -1,7 +1,7 @@
-package org.myshelf.java19modules;
+package org.myshelf.java19modules.presenters;
 
-import org.myshelf.java19modules.domain.UserPresenter;
-import org.myshelf.java19modules.domain.UserResponseDto;
+import org.myshelf.java19modules.presenters.users.UserPresenter;
+import org.myshelf.java19modules.usecases.register.UserRegisterResponseDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ResponseStatusException;
@@ -12,9 +12,9 @@ import java.time.format.DateTimeFormatter;
 @Component
 public class UserRegisterResponseFormatter implements UserPresenter {
     @Override
-    public UserResponseDto prepareSuccessView(UserResponseDto user) {
+    public UserRegisterResponseDto prepareSuccessView(UserRegisterResponseDto user) {
         LocalDateTime responseTime = LocalDateTime.parse(user.createdAt());
-        return new UserResponseDto(
+        return new UserRegisterResponseDto(
                 user.id(),
                 user.name(),
                 responseTime.format(DateTimeFormatter.ofPattern("hh:mm:ss"))
@@ -22,7 +22,7 @@ public class UserRegisterResponseFormatter implements UserPresenter {
     }
 
     @Override
-    public UserResponseDto prepareFailView(String error) {
+    public UserRegisterResponseDto prepareFailView(String error) {
         throw new ResponseStatusException(HttpStatus.CONFLICT, error);
     }
 }

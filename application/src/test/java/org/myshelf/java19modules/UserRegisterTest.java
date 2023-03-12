@@ -26,7 +26,7 @@ public class UserRegisterTest extends TestBase {
                 }""";
 
         this.webTestClient.post()
-                .uri("/user")
+                .uri("/users")
                 .header(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE)
                 .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .bodyValue(userRequestJson)

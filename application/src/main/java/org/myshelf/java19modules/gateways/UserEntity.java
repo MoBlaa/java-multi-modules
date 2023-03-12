@@ -1,4 +1,4 @@
-package org.myshelf.java19modules;
+package org.myshelf.java19modules.gateways;
 
 import jakarta.persistence.*;
 import lombok.Data;

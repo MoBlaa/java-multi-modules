@@ -1,13 +1,11 @@
 package org.myshelf.java19modules;
 
-import org.myshelf.java19modules.domain.*;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ClassPathBeanDefinitionScanner;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.type.classreading.MetadataReader;
 import org.springframework.core.type.classreading.MetadataReaderFactory;
@@ -16,8 +14,6 @@ import org.springframework.core.type.filter.TypeFilter;
 import java.time.Clock;
 
 @Configuration
-@ComponentScan(basePackages = "org.myshelf.java19modules",
-    excludeFilters = @ComponentScan.Filter(pattern = "org.myshelf.java19modules.domain"))
 public class DependencyInjectionConfig {
 
     @Bean
@@ -30,7 +26,7 @@ public class DependencyInjectionConfig {
     void genericApplicationContext(BeanDefinitionRegistry beanRegistry) {
         ClassPathBeanDefinitionScanner beanDefinitionScanner = new ClassPathBeanDefinitionScanner(beanRegistry);
         beanDefinitionScanner.addIncludeFilter(removeModelAndEntitiesFilter());
-        beanDefinitionScanner.scan("com.baeldung.pattern.cleanarchitecture");
+        beanDefinitionScanner.scan("org.myshelf.java19modules");
     }
 
     static TypeFilter removeModelAndEntitiesFilter() {
@@ -39,7 +35,7 @@ public class DependencyInjectionConfig {
             && (mr.getClassMetadata().getClassName().endsWith("Boundary")
             || mr.getClassMetadata().getClassName().endsWith("Factory")
             || mr.getClassMetadata().getClassName().endsWith("Gateway")
-            || mr.getClassMetadata().getClassName().endsWith("Interceptor"));
+            || mr.getClassMetadata().getClassName().endsWith("Interactor"));
     }
 
 //    @Bean

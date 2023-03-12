@@ -15,6 +15,8 @@ public class BaseUnitTest {
 
     @AfterEach
     public void releaseMocks() throws Exception {
-        closeable.close();
+        if (closeable != null) {
+            closeable.close();
+        }
     }
 }

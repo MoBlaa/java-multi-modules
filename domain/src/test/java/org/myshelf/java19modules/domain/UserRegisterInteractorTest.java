@@ -36,6 +36,8 @@ public class UserRegisterInteractorTest extends BaseUnitTest {
                 .willReturn(false);
         given(factory.create("baeldung", "12345"))
                 .willReturn(new CommonUser("baeldung", "12345"));
+        given(gateway.save(new UserDsRequestDto("baeldung", "12345", LocalDateTime.now(clock))))
+            .willReturn(new UserDsResponseDto(1L, "baeldung", LocalDateTime.now(clock)));
 
         interactor.create(new UserRequestDto("baeldung", "12345"));
 

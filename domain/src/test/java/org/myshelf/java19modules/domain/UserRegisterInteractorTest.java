@@ -12,7 +12,7 @@ import java.time.ZoneId;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
 
-public class UserRegisterInteractorTest extends BaseUnitTest {
+public class UserRegisterInteractorTest extends TestBase {
 
     @Mock
     private UserRegisterDsGateway gateway;

@@ -5,6 +5,7 @@ import org.myshelf.java19modules.domain.Greeting;
 import org.myshelf.java19modules.domain.UserInputBoundary;
 import org.myshelf.java19modules.domain.UserRequestDto;
 import org.myshelf.java19modules.domain.UserResponseDto;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
@@ -17,7 +18,7 @@ public class Controller {
         return new Greeting(name).toString();
     }
 
-    @PostMapping(value = "/user")
+    @PostMapping(value = "/user", produces = MediaType.APPLICATION_JSON_VALUE)
     public UserResponseDto create(@RequestBody UserRequestDto requestModel) {
         return userInput.create(requestModel);
     }

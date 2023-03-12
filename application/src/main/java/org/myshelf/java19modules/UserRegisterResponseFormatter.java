@@ -16,7 +16,7 @@ public class UserRegisterResponseFormatter implements UserPresenter {
         LocalDateTime responseTime = LocalDateTime.parse(user.createdAt());
         return new UserResponseDto(
                 user.id(),
-                user.login(),
+                user.name(),
                 responseTime.format(DateTimeFormatter.ofPattern("hh:mm:ss"))
         );
     }

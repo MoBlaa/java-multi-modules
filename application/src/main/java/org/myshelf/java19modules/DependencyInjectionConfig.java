@@ -2,6 +2,7 @@ package org.myshelf.java19modules;
 
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -38,22 +39,8 @@ public class DependencyInjectionConfig {
             || mr.getClassMetadata().getClassName().endsWith("Interactor"));
     }
 
-//    @Bean
-//    public UserFactory userFactory() {
-//        return new CommonUserFactory();
-//    }
-//
-//    @Bean
-//    public UserInputBoundary inputBoundary(
-//            UserRegisterDsGateway gateway,
-//            UserPresenter presenter,
-//            UserFactory factory,
-//            Clock clock
-//    ) {
-//        return new UserRegisterInteractor(gateway, presenter, factory, clock);
-//    }
-
     @Bean
+    @ConditionalOnMissingBean
     public Clock clock() {
         return Clock.systemDefaultZone();
     }

@@ -26,6 +26,10 @@ function format {
   $mvn spotless:apply
 }
 
+function verify {
+  $mvn clean verify
+}
+
 TIMEFORMAT="Task '${1:-help}' completed in %3lR"
 time "${@:-help}"
 

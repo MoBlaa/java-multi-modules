@@ -6,17 +6,17 @@ import org.mockito.MockitoAnnotations;
 
 public class TestBase {
 
-    private AutoCloseable closeable;
+  private AutoCloseable closeable;
 
-    @BeforeEach
-    public void openMocks() {
-        closeable = MockitoAnnotations.openMocks(this);
-    }
+  @BeforeEach
+  public void openMocks() {
+    closeable = MockitoAnnotations.openMocks(this);
+  }
 
-    @AfterEach
-    public void releaseMocks() throws Exception {
-        if (closeable != null) {
-            closeable.close();
-        }
+  @AfterEach
+  public void releaseMocks() throws Exception {
+    if (closeable != null) {
+      closeable.close();
     }
+  }
 }

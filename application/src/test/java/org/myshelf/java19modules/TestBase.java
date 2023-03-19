@@ -7,5 +7,4 @@ import org.springframework.test.context.ActiveProfiles;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Import(TestConfig.class)
 @ActiveProfiles("it")
-public class TestBase {
-}
+public class TestBase {}

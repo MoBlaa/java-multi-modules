@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/users")
 public class Controller {
-    final UserRegisterInputBoundary userInput;
+  final UserRegisterInputBoundary userInput;
 
-    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public UserRegisterResponseDto register(@RequestBody UserRegisterRequestDto requestModel) {
-        return userInput.register(requestModel);
-    }
+  @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+  public UserRegisterResponseDto register(@RequestBody UserRegisterRequestDto requestModel) {
+    return userInput.register(requestModel);
+  }
 }

@@ -3,7 +3,7 @@
 mvn=./mvnw
 
 # Import .env file as environment variables
-[ -f .env ] && export $(grep -v '^#' .env | xargs -d '\n')
+[ -f .env ] && export "$(grep -v '^#' .env | xargs -d '\n')"
 
 function help {
   echo "$0 <task> <args>"
@@ -26,8 +26,8 @@ function format {
   $mvn spotless:apply
 }
 
-TIMEFORMAT="Task ${1:-help} completed in %3lR"
-time ${@:-help}
+TIMEFORMAT="Task '${1:-help}' completed in %3lR"
+time "${@:-help}"
 
 # Unset all environment variables from .env file loaded at beginning
-[ -f .env ] && unset $(grep -v '^#' .env | sed -E 's/(.*)=.*/\1/' | xargs)
+[ -f .env ] && unset "$(grep -v '^#' .env | sed -E 's/(.*)=.*/\1/' | xargs)"

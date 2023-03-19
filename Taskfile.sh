@@ -30,6 +30,10 @@ function verify {
   $mvn clean verify
 }
 
+function javadoc {
+  $mvn javadoc:javadoc
+}
+
 TIMEFORMAT="Task '${1:-help}' completed in %3lR"
 time "${@:-help}"
 

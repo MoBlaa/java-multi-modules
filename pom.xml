@@ -15,6 +15,7 @@
 
         <!-- Plugin deps -->
         <plugin.spotless.version>2.35.0</plugin.spotless.version>
+        <plugin.javadoc.version>3.5.0</plugin.javadoc.version>
     </properties>
 
     <build>
@@ -39,6 +40,11 @@
                         <phase>compile</phase>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${plugin.javadoc.version}</version>
             </plugin>
         </plugins>
     </build>

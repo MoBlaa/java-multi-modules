@@ -2,6 +2,7 @@ package org.myshelf.java19modules.domain;
 
 import jakarta.annotation.Nullable;
 
+/** A simple user implementation. */
 public class CommonUser implements User {
 
   private final String name;

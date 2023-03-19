@@ -31,7 +31,7 @@ function verify {
 }
 
 function javadoc {
-  $mvn javadoc:javadoc
+  $mvn clean javadoc:aggregate -pl :domain
 }
 
 TIMEFORMAT="Task '${1:-help}' completed in %3lR"

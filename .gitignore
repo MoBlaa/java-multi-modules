@@ -137,3 +137,89 @@ fabric.properties
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
+# binaries
+*.exe
+
+# output directories
+build
+vendor
+node_modules
+dist
+
+# generated artifacts
+assets/bundle*.*
+assets/*@*.svg
+assets/*@*.png
+assets/*@*.eot
+assets/*@*.woff
+assets/*@*.woff2
+assets/*@*.ttf
+frontend/templates/react.tmpl
+bindata.go
+server/bindata/generated.go
+*.cover
+*.test
+*.log
+coverage.txt
+storybook-static
+frontend/coverage
+
+# typescript generated test files
+tmp/
+
+# operating system artifacts
+.DS_Store
+
+# test mysql server data
+mysqldata/
+
+# test helm charts
+helm-temp
+
+#editors
+.idea
+
+# Cypress e2e testing
+cypress/screenshots
+cypress/videos
+cypress/downloads
+
+# Fleet local development DB backups
+backup.sql.gz
+
+# Common mistake for new developers to run npm install and then end up
+# committing a package-lock.json. Fleet app uses Yarn with yarn.lock.
+package-lock.json
+
+# infra
+.terraform
+.terraform.tfstate*
+terraform.tfstate*
+*.lock.hcl
+
+# generated orbit installers and artifacts
+fleet-osquery*
+desktop.app.tar.gz
+osqueryd.app.tar.gz
+desktop.tar.gz
+nudge.app.tar.gz
+
+# residual files when running the cpe command
+cmd/cpe/etagenv
+cmd/cpe/cpe*.sqlite
+cmd/cpe/cpe*.sqlite.gz
+
+# Testing TUF server
+test_tuf
+
+# Residual files when running the msrc generate command
+msrc_in/
+msrc_out/
+
+# Residual files when running cmd/macoffice/generate.go
+macoffice_rel_notes/
+
+# Keys and certificates that may be generated in the root of the repo
+# (e.g. with ./build/fleetctl generate ...).
+/*.key
+/*.crt
